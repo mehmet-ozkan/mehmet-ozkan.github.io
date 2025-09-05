@@ -248,22 +248,20 @@ section h2 {
     }
 }
 
-/* -----------------------------
-   Eğitim Dosyasını İndir Butonu Küçültme
------------------------------ */
+/* Eğitim Dosyasını İndir Butonu Küçültme - Mobil uyumlu */
 .btn {
     font-size: 0.75rem !important;   /* yazıyı küçültür */
-    padding: 6px 12px !important;    /* buton iç boşluğunu azaltır */
-    margin-top: 12px !important;     /* üstten boşluk bırakır */
+    padding: 6px 12px !important;    /* iç boşluk azaltıldı */
+    margin-top: 16px !important;     /* başlıktan boşluk bırak */
 }
 
-/* Mobilde buton alt satıra geçsin ve daha küçük olsun */
+/* Mobilde sadece yazı küçülür, genişlik sabit kalsın */
 @media (max-width: 600px) {
     .btn {
         font-size: 0.7rem !important;
         padding: 5px 10px !important;
-        display: block !important;
-        width: 100%; /* opsiyonel: tam genişlik */
+        display: inline-block !important;  /* satırı kaplamasın */
+        width: auto !important;             /* genişlik otomatik */
     }
 }
 

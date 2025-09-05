@@ -250,7 +250,7 @@ section h2 {
 
 /* Eğitim Dosyasını İndir Butonu Küçültme - Mobil uyumlu */
 .btn {
-    font-size: 0.75rem !important;   /* yazıyı küçültür */
+    font-size: 0.65rem !important;   /* yazıyı küçültür */
     padding: 6px 12px !important;    /* iç boşluk azaltıldı */
     margin-top: 16px !important;     /* başlıktan boşluk bırak */
 }

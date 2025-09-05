@@ -241,7 +241,7 @@ section h2 {
     display: inline-block; /* gerekirse */
     margin-top: 12px;      /* başlıktan biraz boşluk bırakır */
 }
-/* Buton boyutunu küçült */
+
 .btn-download {
     padding: 8px 14px;  /* Öncekinden daha küçük */
     font-size: 0.9rem;  /* Yazı boyutu küçültüldü */

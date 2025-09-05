@@ -248,3 +248,60 @@ section h2 {
     }
 }
 
+/* ===========================
+   Buton ve spacing düzenlemeleri
+=========================== */
+
+/* Buton küçültme ve başlıktan boşluk bırakma */
+.btn {
+    font-size: 0.9rem;        /* yazıyı biraz küçültür */
+    margin-top: 20px;         /* başlıktan boşluk bırakır */
+    display: inline-block;
+}
+
+/* Mobilde buton düzeni */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        display: block;        /* alt satıra geçer */
+        margin-top: 12px;      /* üstten boşluk bırakır */
+    }
+}
+
+/* Kaynaklar, grid ve section spacing */
+.resources, .grid {
+    gap: 25px;               /* kartlar arası boşluk */
+    padding: 25px;           /* içten boşluk */
+}
+
+section {
+    margin-bottom: 25px;     /* sectionlar arası boşluk */
+}
+
+/* Section başlık boşluğu artır */
+section h2 {
+    margin-bottom: 15px;     
+}
+
+/* Kartlar içindeki içerik ve buton arası boşluk */
+.card p, .card ul {
+    margin-bottom: 12px;
+}
+
+.card .btn {
+    margin-top: 15px;         /* kart içi buton ile içerik arası */
+}
+
+/* Mobilde kartlar alt alta */
+@media (max-width: 600px) {
+    .resources, .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}

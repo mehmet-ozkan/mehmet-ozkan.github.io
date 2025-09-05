@@ -244,7 +244,7 @@ section h2 {
     .btn {
         font-size: 0.85rem;
         padding: 8px 12px;
-        display: block; /* alt satıra geçer */
+        display: block; /* alt satıra geçsin */
     }
 }
 

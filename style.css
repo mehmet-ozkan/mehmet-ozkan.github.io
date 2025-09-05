@@ -235,18 +235,7 @@ section h2 {
     }
 }
 
-/* Buton boyutu ve üst boşluk ayarı */
-.btn {
-    font-size: 0.9rem; /* yazıyı küçültür */
-    margin-top: 12px;  /* üstten boşluk bırakır */
-}
-@media (max-width: 600px) {
-    .btn {
-        font-size: 0.85rem;
-        padding: 8px 12px;
-        display: block; /* alt satıra geçsin */
-    }
-}
+
 
 /* Eğitim Dosyasını İndir Butonu Küçültme - Mobil uyumlu */
 .btn {
@@ -255,13 +244,6 @@ section h2 {
     margin-top: 16px !important;     /* başlıktan boşluk bırak */
 }
 
-/* Mobilde sadece yazı küçülür, genişlik sabit kalsın */
-@media (max-width: 600px) {
-    .btn {
-        font-size: 0.7rem !important;
-        padding: 5px 10px !important;
-        display: inline-block !important;  /* satırı kaplamasın */
-        width: auto !important;             /* genişlik otomatik */
-    }
+
 }
 

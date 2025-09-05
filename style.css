@@ -235,15 +235,16 @@ section h2 {
     }
 }
 
-.btn-download {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    display: inline-block; /* gerekirse */
-    margin-top: 12px;      /* başlıktan biraz boşluk bırakır */
+/* Buton boyutu ve üst boşluk ayarı */
+.btn {
+    font-size: 0.9rem; /* yazıyı küçültür */
+    margin-top: 12px;  /* üstten boşluk bırakır */
 }
-
-.btn-download {
-    padding: 8px 14px;  /* Öncekinden daha küçük */
-    font-size: 0.9rem;  /* Yazı boyutu küçültüldü */
+@media (max-width: 600px) {
+    .btn {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        display: block; /* alt satıra geçer */
+    }
 }
 

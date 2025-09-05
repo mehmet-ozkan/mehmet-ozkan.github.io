@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilgi Güvenliği</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>🔐 Bilgi Güvenliği</h1><p>Güçlü şifreler, güncellemeler ve güvenli davranışlar</p></header>
+
+<nav>
+  <a href="index.html">Anasayfa</a>
+  <a href="temel-bilgisayar.html">Temel Bilgisayar</a>
+  <a href="windows.html">Windows</a>
+  <a href="internet.html">İnternet & E-posta</a>
+  <a href="office.html">Office</a>
+  <a href="guvenlik.html">Bilgi Güvenliği</a>
+  <a href="kaynaklar.html">Kaynaklar</a>
+  <a href="hakkinda.html">Hakkında</a>
+  <a href="iletisim.html">İletişim</a>
+</nav>
+
+<div class="container">
+
+<section style="position:relative;">
+  <h2>Şifre Güvenliği</h2>
+  <a href="dosyalar/sifre-guvenligi.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li>En az 8–12 karakter; büyük/küçük harf, rakam ve sembol karışımı kullanın.</li>
+    <li>Aynı şifreyi farklı hesaplarda kullanmayın.</li>
+    <li>İki adımlı doğrulamayı (2FA) etkinleştirin.</li>
+  </ul>
+</section>
+
+<section style="position:relative;">
+  <h2>Güncellemeler ve Yazılımlar</h2>
+  <a href="dosyalar/guncellemeler.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li>İşletim sistemi ve uygulamaları güncel tutun.</li>
+    <li>Antivirüs ve güvenlik duvarını etkin kullanın.</li>
+    <li>Yalnızca güvenilir kaynaklardan yazılım indirin.</li>
+  </ul>
+</section>
+
+<section style="position:relative;">
+  <h2>Oltalama (Phishing) ve Sosyal Mühendislik</h2>
+  <a href="dosyalar/oltalama.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li>Gerçek dışı aciliyet içeren mesajlara şüpheyle yaklaşın.</li>
+    <li>Gönderen adresini ve bağlantıları kontrol edin.</li>
+    <li>Kişisel bilgilerinizi e‑posta ile paylaşmayın.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Mini Quiz</h2>
+  <div class="quiz-box" id="quiz-sec">
+    <div class="quiz-question">1) Güçlü şifrenin temel özelliği nedir?</div>
+    <label class="quiz-option"><input type="radio" name="q1" value="a"> Sadece küçük harf</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="b"> Karışık karakterler ve yeterli uzunluk</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="c"> Sadece rakam</label>
+
+    <div class="quiz-question">2) Oltalama e-postasına nasıl yaklaşmalısınız?</div>
+    <label class="quiz-option"><input type="radio" name="q2" value="a"> Gelen bağlantıya hemen tıklayın</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="b"> Göndereni ve adresi doğrulayın</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="c"> Bilgilerinizi paylaşın</label>
+
+    <div class="quiz-question">3) Güvenlik için hangisi doğrudur?</div>
+    <label class="quiz-option"><input type="radio" name="q3" value="a"> Güncellemeler gereksizdir</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="b"> Yazılımları güncel tutmak riskleri azaltır</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="c"> Aynı şifreyi her yerde kullan</label>
+
+    <div class="quiz-actions">
+      <button class="btn" onclick="checkQuiz(['b','b','b'], 'result-sec')">Cevapları Gönder</button>
+      <button class="btn secondary" onclick="resetQuiz('quiz-sec')">Sıfırla</button>
+    </div>
+    <div id="result-sec"></div>
+  </div>
+</section>
+
+</div>
+<footer>© 2025 Bilgisayar Eğitimi</footer>
+
+<script>
+function checkQuiz(keys, resultId){
+  const names = [...new Set(keys.map((_,i)=>'q'+(i+1)))];
+  let score = 0;
+  names.forEach((n, i)=>{
+    const sel = document.querySelector('input[name="'+n+'"]:checked');
+    if(sel && sel.value === keys[i]) score++;
+  });
+  const r = document.getElementById(resultId);
+  r.innerHTML = "Puanınız: " + score + "/" + keys.length + (score===keys.length ? " 🎉 Güvenlik uzmanı oldunuz!" : " ✔️ Fena değil, devam.");
+  r.style.color = score===keys.length ? "green" : "#d32f2f";
+}
+function resetQuiz(boxId){
+  document.querySelectorAll('#'+boxId+' input[type=radio]').forEach(el=>el.checked=false);
+  const res = document.querySelector('#'+boxId+' [id^=result]');
+  if(res) res.textContent = "";
+}
+</script>
+</body>
+</html>

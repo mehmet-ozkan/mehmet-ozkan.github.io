@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İnternet ve E-posta Kullanımı</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>🌐 İnternet & E‑posta</h1><p>Tarayıcılarla gezinme ve güvenli iletişim</p></header>
+<nav>
+  <a href="index.html">Anasayfa</a>
+  <a href="temel-bilgisayar.html">Temel Bilgisayar</a>
+  <a href="windows.html">Windows</a>
+  <a href="internet.html">İnternet & E-posta</a>
+  <a href="office.html">Office</a>
+  <a href="guvenlik.html">Bilgi Güvenliği</a>
+  <a href="kaynaklar.html">Kaynaklar</a>
+  <a href="hakkinda.html">Hakkında</a>
+  <a href="iletisim.html">İletişim</a>
+</nav>
+<div class="container">
+
+<section style="position:relative;">
+  <h2>Tarayıcılar ve Adres Çubuğu</h2>
+  <a href="dosyalar/tarayıcılar.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <p>Chrome, Edge veya Firefox gibi tarayıcılar ile web sitelerine girersiniz. Adres çubuğuna site adresini yazın veya arama yapın.</p>
+  <div class="note"><b>HTTPS</b> ve kilit simgesi, bağlantınızın şifreli olduğunu gösterir.</div>
+</section>
+
+<section style="position:relative;">
+  <h2>Arama Motorlarını Etkili Kullanma</h2>
+  <a href="dosyalar/arama-motorlari.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li>Tam ifade aramak için tırnak: <code class="kbd">"bilgisayar bileşenleri"</code></li>
+    <li>Belirli sitede arama: <code class="kbd">site:edu.tr algoritma</code></li>
+    <li>Kelime hariç: <code class="kbd">python -yılan</code></li>
+  </ul>
+</section>
+
+<section style="position:relative;">
+  <h2>E‑posta Temelleri</h2>
+  <a href="dosyalar/eposta-temelleri.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li><b>Konu:</b> Mesajın özeti.</li>
+    <li><b>Alıcı:</b> Göndermek istediğiniz kişi(ler).</li>
+    <li><b>Ek:</b> Dosya göndermek için kullanılır.</li>
+    <li><b>CC/BCC:</b> Bilgilendirme kopyaları (BCC gizli kopyadır).</li>
+  </ul>
+  <div class="tip">Profesyonel e‑posta yazarken kısa, net ve saygılı olun. Dosya ekliyorsanız metinde mutlaka belirtin.</div>
+</section>
+
+<section style="position:relative;">
+  <h2>Güvenli İnternet Davranışları</h2>
+  <a href="dosyalar/guvenli-internet.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li>Bilinmeyen bağlantılara tıklamayın, adresi kontrol edin.</li>
+    <li>Kamuya açık Wi‑Fi’da hassas işlemlerden kaçının.</li>
+    <li>Güncel tarayıcı ve uzantılar kullanın.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Mini Quiz</h2>
+  <div class="quiz-box" id="quiz-net">
+    <div class="quiz-question">1) HTTPS ne sağlar?</div>
+    <label class="quiz-option"><input type="radio" name="q1" value="a"> Daha hızlı internet</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="b"> Şifreli ve güvenli iletişim</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="c"> Reklamları engeller</label>
+
+    <div class="quiz-question">2) Gizli kopya anlamına gelen alan hangisidir?</div>
+    <label class="quiz-option"><input type="radio" name="q2" value="a"> CC</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="b"> BCC</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="c"> Konu</label>
+
+    <div class="quiz-question">3) Belirli bir sitede arama yapmak için?</div>
+    <label class="quiz-option"><input type="radio" name="q3" value="a"> https://</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="b"> site:alanadı</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="c"> -kelime</label>
+
+    <div class="quiz-actions">
+      <button class="btn" onclick="checkQuiz(['b','b','b'], 'result-net')">Cevapları Gönder</button>
+      <button class="btn secondary" onclick="resetQuiz('quiz-net')">Sıfırla</button>
+    </div>
+    <div id="result-net"></div>
+  </div>
+</section>
+
+</div>
+<footer>© 2025 Bilgisayar Eğitimi</footer>
+<script>
+function checkQuiz(keys, resultId){
+  const names = [...new Set(keys.map((_,i)=>'q'+(i+1)))];
+  let score = 0;
+  names.forEach((n, i)=>{
+    const sel = document.querySelector('input[name="'+n+'"]:checked');
+    if(sel && sel.value === keys[i]) score++;
+  });
+  const r = document.getElementById(resultId);
+  r.innerHTML = "Puanınız: " + score + "/" + keys.length + (score===keys.length ? " 🎉 Mükemmel!" : " ✔️ İyi iş, devam.");
+  r.style.color = score===keys.length ? "green" : "#d32f2f";
+}
+function resetQuiz(boxId){
+  document.querySelectorAll('#'+boxId+' input[type=radio]').forEach(el=>el.checked=false);
+  const res = document.querySelector('#'+boxId+' [id^=result]');
+  if(res) res.textContent = "";
+}
+</script>
+</body>
+</html>

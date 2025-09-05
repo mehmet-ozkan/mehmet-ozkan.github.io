@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Office Programları</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>🧾 Office Programları</h1><p>Word, Excel ve PowerPoint ile üretkenlik</p></header>
+<nav>
+  <a href="index.html">Anasayfa</a>
+  <a href="temel-bilgisayar.html">Temel Bilgisayar</a>
+  <a href="windows.html">Windows</a>
+  <a href="internet.html">İnternet & E-posta</a>
+  <a href="office.html">Office</a>
+  <a href="guvenlik.html">Bilgi Güvenliği</a>
+  <a href="kaynaklar.html">Kaynaklar</a>
+  <a href="hakkinda.html">Hakkında</a>
+  <a href="iletisim.html">İletişim</a>
+</nav>
+<div class="container">
+
+<section style="position:relative;">
+  <h2>Word</h2>
+  <a href="dosyalar/word.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <p>Metin yazma, biçimlendirme (kalın, italik), başlıklar, numaralı listeler ve tablolar.</p>
+  <ul>
+    <li><b>Biçimlendirme:</b> Kalın (<code class="kbd">Ctrl+B</code>), italik (<code class="kbd">Ctrl+I</code>), altı çizili (<code class="kbd">Ctrl+U</code>).</li>
+    <li><b>Stiller:</b> Başlıkları stillerle biçimlendirerek tutarlılık sağlayın.</li>
+    <li><b>Sayfa düzeni:</b> Kenar boşlukları, satır aralığı, paragraf hizalama.</li>
+  </ul>
+</section>
+
+<section style="position:relative;">
+  <h2>Excel</h2>
+  <a href="dosyalar/excel.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <p>Hücreler satır ve sütunlardan oluşur. Formüller <code class="kbd">=</code> ile başlar.</p>
+  <ul>
+    <li><b>Toplama:</b> <code class="kbd">=SUM(A1:A5)</code></li>
+    <li><b>Ortalama:</b> <code class="kbd">=AVERAGE(B1:B10)</code></li>
+    <li><b>En büyük/En küçük:</b> <code class="kbd">=MAX(C:C)</code>, <code class="kbd">=MIN(C:C)</code></li>
+    <li><b>Otomatik Doldurma:</b> Serileri köşeden çekerek hızlıca doldurun.</li>
+  </ul>
+</section>
+
+<section style="position:relative;">
+  <h2>PowerPoint</h2>
+  <a href="dosyalar/powerpoint.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li><b>Slayt düzenleri:</b> Başlık, içerik, görsel ve grafik yerleşimleri.</li>
+    <li><b>Tasarım:</b> Tutarlı tema, okunabilir yazı boyutları.</li>
+    <li><b>Geçiş/animasyon:</b> Abartmadan, içerik odaklı kullanın.</li>
+  </ul>
+  <div class="tip">Örnek çalışma: “Kısa özgeçmiş belgesi”, “Aylık gider tablosu” ve “5 slaytlık tanıtım sunumu” hazırlayın.</div>
+</section>
+
+<section>
+  <h2>Mini Quiz</h2>
+  <div class="quiz-box" id="quiz-office">
+    <div class="quiz-question">1) Excel'de toplama fonksiyonu nedir?</div>
+    <label class="quiz-option"><input type="radio" name="q1" value="a"> =AVG()</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="b"> =SUM()</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="c"> =MIN()</label>
+
+    <div class="quiz-question">2) Word'de kalın yapma kısayolu?</div>
+    <label class="quiz-option"><input type="radio" name="q2" value="a"> Ctrl + I</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="b"> Ctrl + B</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="c"> Ctrl + U</label>
+
+    <div class="quiz-question">3) PowerPoint’te tasarımda önemli olan?</div>
+    <label class="quiz-option"><input type="radio" name="q3" value="a"> Tutarlı tema ve okunabilirlik</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="b"> Aşırı animasyon</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="c"> Renkli arka planlar</label>
+
+    <div class="quiz-actions">
+      <button class="btn" onclick="checkQuiz(['b','b','a'], 'result-office')">Cevapları Gönder</button>
+      <button class="btn secondary" onclick="resetQuiz('quiz-office')">Sıfırla</button>
+    </div>
+    <div id="result-office"></div>
+  </div>
+</section>
+
+</div>
+<footer>© 2025 Bilgisayar Eğitimi</footer>
+<script>
+function checkQuiz(keys, resultId){
+  const names = [...new Set(keys.map((_,i)=>'q'+(i+1)))];
+  let score = 0;
+  names.forEach((n, i)=>{
+    const sel = document.querySelector('input[name="'+n+'"]:checked');
+    if(sel && sel.value === keys[i]) score++;
+  });
+  const r = document.getElementById(resultId);
+  r.innerHTML = "Puanınız: " + score + "/" + keys.length + (score===keys.length ? " 🎉 Süper!" : " ✔️ Güzel, biraz daha.");
+  r.style.color = score===keys.length ? "green" : "#d32f2f";
+}
+function resetQuiz(boxId){
+  document.querySelectorAll('#'+boxId+' input[type=radio]').forEach(el=>el.checked=false);
+  const res = document.querySelector('#'+boxId+' [id^=result]');
+  if(res) res.textContent = "";
+}
+</script>
+</body>
+</html>

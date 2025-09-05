@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows İşletim Sistemi Kullanımı</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>🪟 Windows Kullanımı</h1><p>Masaüstü, dosyalar, ayarlar ve kısayollar</p></header>
+<nav>
+  <a href="index.html">Anasayfa</a>
+  <a href="temel-bilgisayar.html">Temel Bilgisayar</a>
+  <a href="windows.html">Windows</a>
+  <a href="internet.html">İnternet & E-posta</a>
+  <a href="office.html">Office</a>
+  <a href="guvenlik.html">Bilgi Güvenliği</a>
+  <a href="kaynaklar.html">Kaynaklar</a>
+  <a href="hakkinda.html">Hakkında</a>
+  <a href="iletisim.html">İletişim</a>
+</nav>
+<div class="container">
+
+<section style="position:relative;">
+  <h2>Masaüstü ve Görev Çubuğu</h2>
+  <a href="dosyalar/masaustu.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <p>Masaüstü, kısayolları ve dosyaları düzenlediğiniz alandır. Görev çubuğu; açık uygulamaları, arama ve bildirimleri gösterir.</p>
+  <ul>
+    <li><b>Başlat Menüsü:</b> Uygulamalara ve güç seçeneklerine buradan ulaşırsınız.</li>
+    <li><b>Bildirim Alanı:</b> Saat, ağ, ses gibi simgeler.</li>
+  </ul>
+</section>
+
+<section style="position:relative;">
+  <h2>Dosya Gezgini ve Uzantılar</h2>
+  <a href="dosyalar/dosya-gezgini.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <p>Dosya Gezgini ile belgelerinizi yönetirsiniz. Dosya uzantıları türü belirtir: <code class="kbd">.docx</code>, <code class="kbd">.xlsx</code>, <code class="kbd">.png</code> gibi.</p>
+  <div class="tip">Görüntülemek için: Görünüm → Dosya adı uzantıları (etkinleştirin).</div>
+</section>
+
+<section style="position:relative;">
+  <h2>Uygulama Yönetimi</h2>
+  <a href="dosyalar/uygulama-yonetimi.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li><b>Açma/Kapama:</b> Uygulama simgesini tıklayın. Kapatmak için pencere sağ üstteki <b>X</b>.</li>
+    <li><b>Kaldırma:</b> Ayarlar → Uygulamalar → Yüklü uygulamalar.</li>
+  </ul>
+</section>
+
+<section style="position:relative;">
+  <h2>Faydalı Kısayollar</h2>
+  <a href="dosyalar/kisayollar.pdf" class="btn" style="position:absolute; right:10px; top:0;">📥 Eğitim Dosyasını İndir</a>
+  <ul>
+    <li><code class="kbd">Ctrl</code> + <code class="kbd">C</code>: Kopyala</li>
+    <li><code class="kbd">Ctrl</code> + <code class="kbd">V</code>: Yapıştır</li>
+    <li><code class="kbd">Ctrl</code> + <code class="kbd">Z</code>: Geri al</li>
+    <li><code class="kbd">Alt</code> + <code class="kbd">Tab</code>: Uygulamalar arası geçiş</li>
+    <li><code class="kbd">Win</code> + <code class="kbd">E</code>: Dosya Gezgini</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Mini Quiz</h2>
+  <div class="quiz-box" id="quiz-win">
+    <div class="quiz-question">1) Dosya uzantısının amacı nedir?</div>
+    <label class="quiz-option"><input type="radio" name="q1" value="a"> Dosyayı şifrelemek</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="b"> Dosyanın türünü göstermek</label>
+    <label class="quiz-option"><input type="radio" name="q1" value="c"> Dosyayı hızlandırmak</label>
+
+    <div class="quiz-question">2) Açık uygulamalar arasında hızlı geçiş?</div>
+    <label class="quiz-option"><input type="radio" name="q2" value="a"> Ctrl + C</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="b"> Alt + Tab</label>
+    <label class="quiz-option"><input type="radio" name="q2" value="c"> Win + E</label>
+
+    <div class="quiz-question">3) Dosya Gezgini kısayolu hangisidir?</div>
+    <label class="quiz-option"><input type="radio" name="q3" value="a"> Win + E</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="b"> Ctrl + Z</label>
+    <label class="quiz-option"><input type="radio" name="q3" value="c"> Alt + F4</label>
+
+    <div class="quiz-actions">
+      <button class="btn" onclick="checkQuiz(['b','b','a'], 'result-win')">Cevapları Gönder</button>
+      <button class="btn secondary" onclick="resetQuiz('quiz-win')">Sıfırla</button>
+    </div>
+    <div id="result-win"></div>
+  </div>
+</section>
+
+</div>
+<footer>© 2025 Bilgisayar Eğitimi</footer>
+<script>
+function checkQuiz(keys, resultId){
+  const names = [...new Set(keys.map((_,i)=>'q'+(i+1)))];
+  let score = 0;
+  names.forEach((n, i)=>{
+    const sel = document.querySelector('input[name="'+n+'"]:checked');
+    if(sel && sel.value === keys[i]) score++;
+  });
+  const r = document.getElementById(resultId);
+  r.innerHTML = "Puanınız: " + score + "/" + keys.length + (score===keys.length ? " 🎉 Harika!" : " ✔️ Devam!");
+  r.style.color = score===keys.length ? "green" : "#d32f2f";
+}
+function resetQuiz(boxId){
+  document.querySelectorAll('#'+boxId+' input[type=radio]').forEach(el=>el.checked=false);
+  const res = document.querySelector('#'+boxId+' [id^=result]');
+  if(res) res.textContent = "";
+}
+</script>
+</body>
+</html>

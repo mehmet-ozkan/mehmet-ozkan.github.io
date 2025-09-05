@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:#f4f7fb;
+  color:#333;
+  line-height:1.7;
+}
+
+header {
+  background:linear-gradient(135deg, #4CAF50, #2E7D32);
+  color:white;
+  padding:36px 20px;
+  text-align:center;
+  border-bottom-left-radius:30px;
+  border-bottom-right-radius:30px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 { font-size:2rem; }
+header p { opacity:.95; margin-top:6px; }
+
+nav {
+  background:#fff;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  border-radius:50px;
+  margin:20px auto;
+  width:92%;
+  max-width:1100px;
+}
+
+nav a {
+  flex:1;
+  min-width:140px;
+  padding:12px 20px;
+  text-align:center;
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
+  transition:.25s;
+  border-radius:50px;
+}
+
+nav a:hover { background:#4CAF50; color:#fff; }
+
+.container {
+  width:92%;
+  max-width:1100px;
+  margin:20px auto 40px auto;
+}
+
+section {
+  padding:20px;
+  background:white;
+  border-radius:16px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.06);
+  margin-bottom:20px;
+}
+
+section h2 { color:#2E7D32; margin-bottom:10px; }
+section h3 { color:#388E3C; margin:14px 0 8px; }
+section p, section ul { margin-bottom:12px; }
+ul li { margin-left:18px; margin-bottom:6px; }
+
+.grid {
+  display:grid;
+  gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background:#fff;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.08);
+  transition:transform .2s, box-shadow .2s;
+  text-decoration:none;
+  color:#333;
+}
+
+.card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 22px rgba(0,0,0,0.12);
+}
+
+.card h3 { margin-bottom:8px; }
+.badge {
+  display:inline-block; padding:4px 10px; border-radius:999px;
+  background:#E8F5E9; color:#2E7D32; font-size:.8rem; font-weight:600;
+}
+
+footer {
+  background:#2E7D32; color:white; text-align:center;
+  padding:18px; border-top-left-radius:20px; border-top-right-radius:20px;
+}
+
+/* Quiz */
+.quiz-box {
+  margin-top:10px;
+  padding:20px;
+  border:2px solid #4CAF50;
+  border-radius:12px;
+  background:#f9fff9;
+}
+.quiz-question { font-weight:600; margin:10px 0 6px; }
+.quiz-option { margin:6px 0; padding:8px 12px; border-radius:6px; transition:.2s; }
+.quiz-option:hover { background:#e8f5e9; }
+.quiz-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+.btn {
+  padding:12px 18px; background:#4CAF50; color:white; font-weight:700;
+  border:none; border-radius:10px; cursor:pointer; transition:.25s;
+}
+.btn:hover { background:#388E3C; }
+.btn.secondary { background:#e0e0e0; color:#333; }
+#result { margin-top:12px; font-weight:700; font-size:1.05rem; }
+.tip {
+  background:#FFFDE7; border-left:4px solid #FFC107; padding:12px; border-radius:8px;
+}
+.note {
+  background:#E3F2FD; border-left:4px solid #2196F3; padding:12px; border-radius:8px;
+}
+code.kbd {
+  background:#eee; border-radius:6px; padding:2px 6px; font-weight:600;
+}
+
+/* Container tüm sayfalarda sabit max-width ile ortalanacak */
+.container {
+  width:92%;
+  max-width:1100px;
+  margin:20px auto 40px auto; /* üst-orta-alt boşluk */
+  display:block;
+}
+
+/* Kaynaklar ve İletişim için grid düzeni (isteğe göre) */
+.container.grid-layout {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:20px;
+}
+
+/* İçerik bölümleri hizası */
+section {
+  padding:20px;
+  background:white;
+  border-radius:16px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.06);
+  margin-bottom:20px;
+  width:100%;
+}
+header h1 {
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+section h2 {
+  text-shadow: 1px 1px 4px rgba(46,125,50,0.4);
+}
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #4CAF50;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.flicker {
+  color: #4CAF50;
+  text-shadow: 0 0 3px #4CAF50, 0 0 10px #4CAF50;
+  animation: flickerAnim 1.5s infinite;
+}
+
+@keyframes flickerAnim {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.4; }
+}
+
+
+.shake {
+  display: inline-block;
+  animation: shakeAnim 0.5s infinite;
+}
+
+@keyframes shakeAnim {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+}
+
+.glow {
+  color: #fff;
+  text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 20px #4CAF50;
+}
+
